@@ -15,6 +15,8 @@ public class MessageDbContext : DbContext {
   public DbSet<Message>? messages { get; set; }
   public DbSet<ChatRoom>? chatRooms { get; set; }
 
+  public DbSet<User>? users { get; set; }
+
   protected override void OnModelCreating(ModelBuilder modelBuilder) {
 
     modelBuilder.Entity<Message>().HasKey(x => x.ID);
