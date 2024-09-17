@@ -15,8 +15,14 @@ namespace ChatApp.AuthAPI.Controllers {
       _mediator = mediator;
     }
 
-    [HttpPost]
+    [HttpPost("Register")]
     public async Task<IActionResult> CreateUser(CreateUserCommand request) {
+      var result = await _mediator.Send(request);
+      return Ok(result);
+    }
+
+    [HttpPost("Login")]
+    public async Task<IActionResult> Login(LoginUserCommand request) {
       var result = await _mediator.Send(request);
       return Ok(result);
     }
