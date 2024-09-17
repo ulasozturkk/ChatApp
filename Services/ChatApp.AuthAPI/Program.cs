@@ -57,6 +57,7 @@ builder.Services.AddScoped<ISecurityService, SecurityService>();
 builder.Services.Configure<ChatApp.Utils.Security.JWT.JWTSettings>(builder.Configuration.GetSection("Jwt"));
 
 builder.Services.AddHttpClient();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
   options.TokenValidationParameters = new TokenValidationParameters {
     ValidateIssuer = true,
