@@ -9,6 +9,6 @@ namespace ChatApp.Models.Mobile {
 
         public string? ID { get; set; }
     public string? CreatedDate { get; set; }
-        public string? IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }

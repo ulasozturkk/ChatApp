@@ -15,7 +15,8 @@ public class JwtHelper {
 
     var claims = new List<Claim> {
       new Claim(JwtRegisteredClaimNames.Jti,request.UserName ?? ""),
-      new Claim("USERID", $"{request.UserID}" ?? "")
+      new Claim("USERID", $"{request.UserID}" ?? ""),
+      new Claim("USERNAME",$"{request.UserName}" ?? "")
 
     };
     var token = new JwtSecurityToken(request.Issuer,request.Audience,claims:claims,expires:DateTime.Now.AddHours(3),signingCredentials:credientals);
