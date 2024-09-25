@@ -1,4 +1,5 @@
 using ChatApp.SignalR.Hubs;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddMassTransit(x => {
+  x.UsingRabbitMq((context, cfg) => {
+    cfg.Host("amqp://localhost:5672", host => {
+      host.Username("guest");
+      host.Password("guest");
+    });
+  });
+});
 
 builder.Services.AddCors(opt => opt.AddDefaultPolicy(policy => policy.AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetIsOriginAllowed(origin => true)));
 

@@ -1,7 +1,9 @@
 using ChatApp.Database;
+using ChatApp.MobileAPI.Consumers;
 using ChatApp.Utils.Security.JWT;
 using ChatApp.Utils.Security.Services.Abstract;
 using ChatApp.Utils.Security.Services.Concrete;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -21,6 +23,15 @@ builder.Services.AddDbContext<MessageDbContext>(opt => {
 });
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddMassTransit(x => {
+  x.AddConsumer<SaveMessageConsumer>();
+
+  x.UsingRabbitMq((context, cfg) => {
+    cfg.ReceiveEndpoint("save-message-queue", e => {
+      e.ConfigureConsumer<SaveMessageConsumer>(context);
+    });
+  });
+});
 
 builder.Services.AddSwaggerGen(c => {
   c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth API", Version = "v1" });
