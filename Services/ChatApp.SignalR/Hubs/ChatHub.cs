@@ -1,4 +1,5 @@
-﻿using ChatApp.SignalR.Dtos;
+﻿
+using ChatApp.Models.dtos;
 using Microsoft.AspNetCore.SignalR;
 
 namespace ChatApp.SignalR.Hubs; 
