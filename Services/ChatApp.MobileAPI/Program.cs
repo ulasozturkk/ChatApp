@@ -1,5 +1,6 @@
-using ChatApp.Database;
+
 using ChatApp.MobileAPI.Consumers;
+using ChatApp.MobileAPI.Database;
 using ChatApp.Utils.Security.JWT;
 using ChatApp.Utils.Security.Services.Abstract;
 using ChatApp.Utils.Security.Services.Concrete;
@@ -18,7 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MessageDbContext>(opt => {
   opt.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection"), config => {
-    config.MigrationsAssembly("ChatApp.Services.MobileAPI");
+    config.MigrationsAssembly("ChatApp.MobileAPI");
   });
 });
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

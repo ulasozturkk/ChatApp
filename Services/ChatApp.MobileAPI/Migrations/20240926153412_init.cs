@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ChatApp.Database.Migrations
+namespace ChatApp.MobileAPI.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration
@@ -16,7 +16,7 @@ namespace ChatApp.Database.Migrations
                 {
                     ID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreatedDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,7 +33,7 @@ namespace ChatApp.Database.Migrations
                     SenderUserID = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MessageText = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -52,11 +52,10 @@ namespace ChatApp.Database.Migrations
                     ID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Token = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PushToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ChatRoomID = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {

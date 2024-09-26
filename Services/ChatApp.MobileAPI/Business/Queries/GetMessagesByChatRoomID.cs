@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.Internal.Mappers;
-using ChatApp.Database;
+using ChatApp.MobileAPI.Database;
 using ChatApp.MobileAPI.Dtos;
 using ChatApp.MobileAPI.Mapping;
 using ChatApp.Utils.Dtos;

@@ -1,4 +1,5 @@
-﻿using ChatApp.Database;
+﻿
+using ChatApp.MobileAPI.Database;
 using ChatApp.Models.Commands;
 using ChatApp.Models.Mobile;
 using MassTransit;

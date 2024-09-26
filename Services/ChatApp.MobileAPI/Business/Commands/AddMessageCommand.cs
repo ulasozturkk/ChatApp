@@ -1,4 +1,5 @@
-﻿using ChatApp.Database;
+﻿
+using ChatApp.MobileAPI.Database;
 using ChatApp.Models.Mobile;
 using ChatApp.Utils.Dtos;
 using ChatApp.Utils.Security.JWT;

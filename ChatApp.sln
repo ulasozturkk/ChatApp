@@ -9,23 +9,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{CFF1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{EA60F8A6-006B-4C59-9BF4-660F2B57967E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.Database", "Shared\ChatApp.Database\ChatApp.Database.csproj", "{8A9BB104-8424-4B28-B533-1A1C11FAA9CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.Filters", "Shared\ChatApp.Filters\ChatApp.Filters.csproj", "{B9D41E2A-6A53-47C9-B89D-A53AE6F31A91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.Filters", "Shared\ChatApp.Filters\ChatApp.Filters.csproj", "{B9D41E2A-6A53-47C9-B89D-A53AE6F31A91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.Models", "Shared\ChatApp.Models\ChatApp.Models.csproj", "{695210B7-2C7B-4C9E-85E8-83350F591C25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.Models", "Shared\ChatApp.Models\ChatApp.Models.csproj", "{695210B7-2C7B-4C9E-85E8-83350F591C25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.Utils", "Shared\ChatApp.Utils\ChatApp.Utils.csproj", "{46F69013-AE9D-4A6D-A14B-F8EFC6AB725E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.Utils", "Shared\ChatApp.Utils\ChatApp.Utils.csproj", "{46F69013-AE9D-4A6D-A14B-F8EFC6AB725E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.AuthAPI", "Services\ChatApp.AuthAPI\ChatApp.AuthAPI.csproj", "{00FFDA8A-E1CF-4684-95C7-4621BDA15459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.AuthAPI", "Services\ChatApp.AuthAPI\ChatApp.AuthAPI.csproj", "{00FFDA8A-E1CF-4684-95C7-4621BDA15459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.MobileAPI", "Services\ChatApp.MobileAPI\ChatApp.MobileAPI.csproj", "{8EB7C5BD-916A-4B26-B428-24059802727F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.MobileAPI", "Services\ChatApp.MobileAPI\ChatApp.MobileAPI.csproj", "{8EB7C5BD-916A-4B26-B428-24059802727F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.SignalR", "Services\ChatApp.SignalR\ChatApp.SignalR.csproj", "{105066D5-4A6E-4D74-AC37-3F4CE99BEAEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.SignalR", "Services\ChatApp.SignalR\ChatApp.SignalR.csproj", "{105066D5-4A6E-4D74-AC37-3F4CE99BEAEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.MessagingAPI", "Services\ChatApp.MessagingAPI\ChatApp.MessagingAPI.csproj", "{7BA4EBF2-D82F-4EB2-A0BB-90B4BCD1DA73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.MessagingAPI", "Services\ChatApp.MessagingAPI\ChatApp.MessagingAPI.csproj", "{7BA4EBF2-D82F-4EB2-A0BB-90B4BCD1DA73}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp.Gateway", "Gateway\ChatApp.Gateway\ChatApp.Gateway.csproj", "{2910E94C-D14A-4A1A-A33B-2EFF02EC7511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApp.Gateway", "Gateway\ChatApp.Gateway\ChatApp.Gateway.csproj", "{2910E94C-D14A-4A1A-A33B-2EFF02EC7511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A9BB104-8424-4B28-B533-1A1C11FAA9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A9BB104-8424-4B28-B533-1A1C11FAA9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A9BB104-8424-4B28-B533-1A1C11FAA9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A9BB104-8424-4B28-B533-1A1C11FAA9CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9D41E2A-6A53-47C9-B89D-A53AE6F31A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9D41E2A-6A53-47C9-B89D-A53AE6F31A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9D41E2A-6A53-47C9-B89D-A53AE6F31A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,7 +68,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8A9BB104-8424-4B28-B533-1A1C11FAA9CB} = {EA60F8A6-006B-4C59-9BF4-660F2B57967E}
 		{B9D41E2A-6A53-47C9-B89D-A53AE6F31A91} = {EA60F8A6-006B-4C59-9BF4-660F2B57967E}
 		{695210B7-2C7B-4C9E-85E8-83350F591C25} = {EA60F8A6-006B-4C59-9BF4-660F2B57967E}
 		{46F69013-AE9D-4A6D-A14B-F8EFC6AB725E} = {EA60F8A6-006B-4C59-9BF4-660F2B57967E}

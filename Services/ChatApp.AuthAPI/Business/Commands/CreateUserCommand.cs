@@ -1,5 +1,5 @@
-﻿using ChatApp.AuthAPI.Dtos;
-using ChatApp.Database;
+﻿using ChatApp.AuthAPI.Database;
+using ChatApp.AuthAPI.Dtos;
 using ChatApp.Models.Mobile;
 using ChatApp.Utils.Dtos;
 using ChatApp.Utils.Security.JWT;
@@ -17,10 +17,10 @@ public class CreateUserCommand : IRequest<ResponseDTO<UserDto>> {
 
   public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, ResponseDTO<UserDto>> {
 
-    private readonly MessageDbContext _db;
+    private readonly UserDbContext _db;
     private ISecurityService _securityService;
     private readonly JWTSettings _jwtSettings;
-    public CreateUserCommandHandler(MessageDbContext db,ISecurityService securityService,IOptions<JWTSettings> jwtsettings) {
+    public CreateUserCommandHandler(UserDbContext db,ISecurityService securityService,IOptions<JWTSettings> jwtsettings) {
       _db = db;
       _securityService = securityService;
       _jwtSettings = jwtsettings.Value;

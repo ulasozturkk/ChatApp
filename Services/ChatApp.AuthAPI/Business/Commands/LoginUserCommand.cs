@@ -1,5 +1,5 @@
-﻿using ChatApp.AuthAPI.Dtos;
-using ChatApp.Database;
+﻿using ChatApp.AuthAPI.Database;
+using ChatApp.AuthAPI.Dtos;
 using ChatApp.Utils.Dtos;
 using ChatApp.Utils.Security.JWT;
 using ChatApp.Utils.Security.Services.Abstract;
@@ -15,11 +15,11 @@ public class LoginUserCommand : IRequest<ResponseDTO<UserDto>>{
 
   public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand,ResponseDTO<UserDto>> {
 
-    private MessageDbContext _db;
+    private UserDbContext _db;
     private JWTSettings _jwtSettings;
     private ISecurityService _securityService;
 
-    public LoginUserCommandHandler(MessageDbContext db,IOptions<JWTSettings> jwtSettings,ISecurityService securityService) {
+    public LoginUserCommandHandler(UserDbContext db,IOptions<JWTSettings> jwtSettings,ISecurityService securityService) {
       _db = db;
       _jwtSettings = jwtSettings.Value;
       _securityService = securityService;

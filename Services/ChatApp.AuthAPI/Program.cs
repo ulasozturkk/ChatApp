@@ -1,4 +1,4 @@
-using ChatApp.Database;
+using ChatApp.AuthAPI.Database;
 using ChatApp.Utils.Security.JWT;
 using ChatApp.Utils.Security.Services.Abstract;
 using ChatApp.Utils.Security.Services.Concrete;
@@ -14,9 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
-builder.Services.AddDbContext<MessageDbContext>(opt=> {
+builder.Services.AddDbContext<UserDbContext>(opt=> {
   opt.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection"), config => {
-    config.MigrationsAssembly("ChatApp.Services.AuthAPI");
+    config.MigrationsAssembly("ChatApp.AuthAPI");
   });
 });
 
@@ -52,6 +52,7 @@ builder.Services.AddSwaggerGen(c => {
 });
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddScoped<IJwtTokenParse, JwtTokenParse>();
 builder.Services.AddScoped<ISecurityService, SecurityService>();
 builder.Services.Configure<ChatApp.Utils.Security.JWT.JWTSettings>(builder.Configuration.GetSection("Jwt"));
