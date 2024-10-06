@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChatApp.MobileAPI.Controllers {
-  [Route("api/[controller]/[Action]")]
+  [Route("api/[controller]")]
   [ApiController]
   public class MessageController : CustomBaseController {
 
@@ -15,19 +15,19 @@ namespace ChatApp.MobileAPI.Controllers {
       _mediator = mediator;
     }
 
-    [HttpPost]
+    [HttpPost("AddMessage")]
     public async Task<IActionResult> AddMessage(AddMessageCommand request) {
       var res = await _mediator.Send(request);
       return Ok(res);
     }
 
-    [HttpPost]
+    [HttpPost("CreateChatRoom")]
     public async Task<IActionResult> CreateChatRoom(CreateChatRoomCommand request) {
       var res = await _mediator.Send(request);
       return Ok(res);
     }
 
-    [HttpPost]
+    [HttpPost("GetMessageByChatRoomID")]
     public async Task<IActionResult> GetMessageByChatRoomID(GetMessagesByChatRoomID request) {
       var res = await _mediator.Send(request);
       return Ok(res);
